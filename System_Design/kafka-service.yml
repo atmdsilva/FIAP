@@ -1,0 +1,22 @@
+#Deploy Kafka Docker Service
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kafka-service
+  labels:
+    name: kafka
+spec:
+  ports:
+  - port: 9092
+    name: kafka-port
+    protocol: TCP
+  selector:
+    app: kafka
+    id: "0"
+  type: LoadBalancer
+
+
+#Comando para deploy:
+#$ kubectl create -f kafka-service.yml
