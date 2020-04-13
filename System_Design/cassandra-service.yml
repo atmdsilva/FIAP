@@ -1,0 +1,18 @@
+#Deploy Cassandra Service
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: cassandra
+  name: cassandra
+spec:
+  clusterIP: None
+  ports:
+    - port: 9042
+  selector:
+    app: cassandra
+
+#Comando para deploy
+#$ create -f cassandra-service.yml
